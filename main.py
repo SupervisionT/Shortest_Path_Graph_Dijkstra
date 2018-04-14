@@ -1,6 +1,6 @@
 #import system arguments
 import sys
-
+print sys.argv
 #read variabls passed from bash shell
 try:
     dataDIR = sys.argv[1]

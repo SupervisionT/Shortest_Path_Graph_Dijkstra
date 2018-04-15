@@ -1,6 +1,6 @@
 #import system arguments
 import sys
-print sys.argv
+
 #read variabls passed from bash shell
 try:
     dataDIR = sys.argv[1]
@@ -117,7 +117,7 @@ def getShortestPath(graph, start, end):
                 break
         path.insert(0,start)
         if shortestDistance[end] != infinity:
-            print('Shortest path is: ' + str(path))
+            return str(shortestDistance[end])
     else:
         print('Start or end is not valied nodes!')
 
@@ -127,6 +127,7 @@ try:
     vertices, edges = parseData(dataString)
     edgesClean = cleanEdges(edges)
     graph = dictionary(vertices, edgesClean)
-    getShortestPath(graph, start, end)
+    result = getShortestPath(graph, start, end)
+    print (result + 'm')
 except:
     print('Fatal error!')

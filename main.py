@@ -3,14 +3,14 @@ import sys
 
 #read variabls passed from bash shell
 try:
+    if len(sys.argv) > 4:
+        print ('Warning! Inputs are more than expected, will handel the first 3 inputs and ignore the rest')
     dataDIR = sys.argv[1]
     start = sys.argv[2]
     end = sys.argv[3]
 except:
-    dataDIR = 'mapping-coding--graph.dat'
-    start = 1
-    end = 1
     print('Incorrect arguments please make sure to pass <Data source> <From> <To>')
+    sys.exit(1)
 
 #readFile is a function that read data from file and return an array of strings
 #If there is an error in finding the path or reading the file the function will
